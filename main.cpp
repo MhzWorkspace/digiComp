@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <iomanip>  // for fixed & setprecision
-#include <sstream>  // for ostringstream
+#include <iomanip> 
+#include <sstream> 
 using namespace std;
 
 // ===== WALLET CLASS =====
