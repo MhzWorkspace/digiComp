@@ -4,21 +4,25 @@ using namespace std;
 int main() {
     int choice;
 
-    cout << "=============================\n";
-    cout << "   Welcome to Simple Grab\n";
-    cout << "=============================\n";
-    cout << "1. Grab Ride\n";
-    cout << "2. Grab Food\n";
-    cout << "3. Grab Wallet\n";
+    cout << "=====================================\n";
+    cout << "         🚖 Welcome to Grab 🚖        \n";
+    cout << "=====================================\n";
+    cout << "   Please choose a service:           \n";
+    cout << "-------------------------------------\n";
+    cout << "  1. Grab Ride   🚗  (Book a ride)    \n";
+    cout << "  2. Grab Food   🍔  (Order food)     \n";
+    cout << "  3. Grab Wallet 💰  (Pay & Top-up)   \n";
+    cout << "-------------------------------------\n";
     cout << "Enter your choice (1-3): ";
     cin >> choice;
 
-    // Temporary message until friends add their functions
+    cout << "\n";
+
     switch(choice) {
-        case 1: cout << "Grab Ride selected.\n"; break;
-        case 2: cout << "Grab Food selected.\n"; break;
-        case 3: cout << "Grab Wallet selected.\n"; break;
-        default: cout << "Invalid choice.\n";
+        case 1: cout << "➡ You selected Grab Ride 🚗\n"; break;
+        case 2: cout << "➡ You selected Grab Food 🍔\n"; break;
+        case 3: cout << "➡ You selected Grab Wallet 💰\n"; break;
+        default: cout << "❌ Invalid choice. Please try again.\n";
     }
 
     return 0;
