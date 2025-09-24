@@ -1,4 +1,5 @@
 #include <iostream>
+#include "grabfood.h"
 using namespace std;
 
 int main() {
@@ -20,10 +21,13 @@ int main() {
 
     switch(choice) {
         case 1: cout << "➡ You selected Grab Ride 🚗\n"; break;
-        case 2: cout << "➡ You selected Grab Food 🍔\n"; break;
+        case 2:
+            grabFood(); 
+            break;
         case 3: cout << "➡ You selected Grab Wallet 💰\n"; break;
         default: cout << "❌ Invalid choice. Please try again.\n";
     }
 
+    system("pause");
     return 0;
 }
