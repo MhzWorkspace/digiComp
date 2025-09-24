@@ -1,66 +1,8 @@
 #include <iostream>
-#include <vector>
-#include <string>
-#include <iomanip>
-#include <sstream>
 #include "grabfood.h"
+#include "wallet.h"
 using namespace std;
 
-// ===== WALLET CLASS =====
-class Wallet {
-private:
-    double balance;
-    vector<string> history;
-
-public:
-    Wallet() {
-        balance = 0.0;
-        history.push_back("Wallet created with balance RM0.00");
-    }
-
-    void viewBalance() {
-        cout << "\n💰 Current Balance: RM"
-             << fixed << setprecision(2) << balance << endl;
-    }
-
-    void addMoney(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            history.push_back("Added RM" + formatAmount(amount));
-            cout << "✅ Successfully added RM"
-                 << fixed << setprecision(2) << amount << " to wallet.\n";
-        } else {
-            cout << "❌ Invalid amount.\n";
-        }
-    }
-
-    void deductMoney(double amount, const string &purpose) {
-        if (amount <= balance) {
-            balance -= amount;
-            history.push_back("Deducted RM" + formatAmount(amount) + " for " + purpose);
-            cout << "✅ Deducted RM"
-                 << fixed << setprecision(2) << amount << " for " << purpose << ".\n";
-        } else {
-            cout << "❌ Insufficient balance!\n";
-        }
-    }
-
-    void viewHistory() {
-        cout << "\n📜 Transaction History:\n";
-        for (const auto &h : history) {
-            cout << "- " << h << endl;
-        }
-    }
-
-    // Helper to format amount
-    string formatAmount(double amount) {
-        ostringstream out;
-        out << fixed << setprecision(2) << amount;
-        return out.str();
-    }
-};
-
-// ===== MAIN PROGRAM =====
 int main() {
     Wallet myWallet;
     int mainChoice, walletChoice;
@@ -81,7 +23,7 @@ int main() {
         if (mainChoice == 1) {
             cout << "🚗 Grab Ride is under development.\n";
         } else if (mainChoice == 2) {
-            grabFood(); // friend's function
+            grabFood(myWallet);
         } else if (mainChoice == 3) {
             while (true) {
                 cout << "\n=== Grab Wallet Menu ===\n";
@@ -101,7 +43,7 @@ int main() {
                 } else if (walletChoice == 3) {
                     myWallet.viewHistory();
                 } else if (walletChoice == 0) {
-                    break; // back to homepage
+                    break;
                 } else {
                     cout << "❌ Invalid choice!\n";
                 }

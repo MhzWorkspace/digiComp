@@ -3,10 +3,11 @@
 #include "grabfood.h"
 using namespace std;
 
-void grabFood() {
+void grabFood(Wallet &myWallet) {
     int foodChoice, restaurantChoice;
-    double totalBill = 0.0;
-    char orderAgain;
+    double price = 0.0;
+    string orderName;
+    char orderAgain, confirm;
 
     do {
         cout << "=====================================\n";
@@ -36,13 +37,14 @@ void grabFood() {
                 cin >> restaurantChoice;
 
                 if (restaurantChoice == 1) {
-                    cout << "Order Confirmed: Pizza from Domino's (RM 20)\n";
-                    totalBill += 20;
+                    orderName = "Pizza from Domino's";
+                    price = 20;
                 } else if (restaurantChoice == 2) {
-                    cout << "Order Confirmed: Pizza from Pizza Hut (RM 18)\n";
-                    totalBill += 18;
+                    orderName = "Pizza from Pizza Hut";
+                    price = 18;
                 } else {
                     cout << "Invalid choice.\n";
+                    continue;
                 }
                 break;
             }
@@ -56,13 +58,14 @@ void grabFood() {
                 cin >> restaurantChoice;
 
                 if (restaurantChoice == 1) {
-                    cout << "Order Confirmed: Burger from McDonald's (RM 12)\n";
-                    totalBill += 12;
+                    orderName = "Burger from McDonald's";
+                    price = 12;
                 } else if (restaurantChoice == 2) {
-                    cout << "Order Confirmed: Burger from Burger King (RM 15)\n";
-                    totalBill += 15;
+                    orderName = "Burger from Burger King";
+                    price = 15;
                 } else {
                     cout << "Invalid choice.\n";
+                    continue;
                 }
                 break;
             }
@@ -76,31 +79,36 @@ void grabFood() {
                 cin >> restaurantChoice;
 
                 if (restaurantChoice == 1) {
-                    cout << "Order Confirmed: Rice from Nasi Kandar (RM 10)\n";
-                    totalBill += 10;
+                    orderName = "Rice from Nasi Kandar";
+                    price = 10;
                 } else if (restaurantChoice == 2) {
-                    cout << "Order Confirmed: Rice from Mixed Rice (RM 8)\n";
-                    totalBill += 8;
+                    orderName = "Rice from Mixed Rice";
+                    price = 8;
                 } else {
                     cout << "Invalid choice.\n";
+                    continue;
                 }
                 break;
             }
 
             default:
                 cout << "Invalid food choice.\n";
+                continue;
+        }
+
+        // Confirmation step
+        cout << "\nConfirm order: " << orderName << " (RM" << price << ")? (y/n): ";
+        cin >> confirm;
+
+        if (confirm == 'y' || confirm == 'Y') {
+            // Deduct from wallet
+            myWallet.deductMoney(price, "GrabFood - " + orderName);
+        } else {
+            cout << "❌ Order cancelled.\n";
         }
 
         cout << "\nWould you like to order another item? (y/n): ";
         cin >> orderAgain;
 
     } while (orderAgain == 'y' || orderAgain == 'Y');
-
-    // Final bill
-    cout << "\n=====================================\n";
-    cout << "           GrabFood Receipt           \n";
-    cout << "=====================================\n";
-    cout << "Total Amount: RM " << totalBill << "\n";
-    cout << "Thank you for using GrabFood!\n";
-    cout << "=====================================\n\n";
 }
