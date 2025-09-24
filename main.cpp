@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <iomanip> 
-#include <sstream> 
+#include <iomanip>
+#include <sstream>
+#include "grabfood.h"
 using namespace std;
 
 // ===== WALLET CLASS =====
@@ -18,7 +19,7 @@ public:
     }
 
     void viewBalance() {
-        cout << "\n💰 Current Balance: RM" 
+        cout << "\n💰 Current Balance: RM"
              << fixed << setprecision(2) << balance << endl;
     }
 
@@ -26,7 +27,7 @@ public:
         if (amount > 0) {
             balance += amount;
             history.push_back("Added RM" + formatAmount(amount));
-            cout << "✅ Successfully added RM" 
+            cout << "✅ Successfully added RM"
                  << fixed << setprecision(2) << amount << " to wallet.\n";
         } else {
             cout << "❌ Invalid amount.\n";
@@ -37,7 +38,7 @@ public:
         if (amount <= balance) {
             balance -= amount;
             history.push_back("Deducted RM" + formatAmount(amount) + " for " + purpose);
-            cout << "✅ Deducted RM" 
+            cout << "✅ Deducted RM"
                  << fixed << setprecision(2) << amount << " for " << purpose << ".\n";
         } else {
             cout << "❌ Insufficient balance!\n";
@@ -66,20 +67,22 @@ int main() {
     double amount;
 
     while (true) {
-        cout << "\n=== Grab Homepage ===\n";
-        cout << "1. Grab Ride 🚗 (coming soon)\n";
-        cout << "2. Grab Food 🍔 (coming soon)\n";
-        cout << "3. Grab Wallet 💰\n";
-        cout << "0. Exit\n";
-        cout << "Choose option: ";
+        cout << "\n=====================================\n";
+        cout << "         🚖 Welcome to Grab 🚖        \n";
+        cout << "=====================================\n";
+        cout << " 1. Grab Ride 🚗  (coming soon)\n";
+        cout << " 2. Grab Food 🍔  (demo)\n";
+        cout << " 3. Grab Wallet 💰\n";
+        cout << " 0. Exit\n";
+        cout << "-------------------------------------\n";
+        cout << "Enter your choice: ";
         cin >> mainChoice;
 
         if (mainChoice == 1) {
             cout << "🚗 Grab Ride is under development.\n";
         } else if (mainChoice == 2) {
-            cout << "🍔 Grab Food is under development.\n";
+            grabFood(); // friend's function
         } else if (mainChoice == 3) {
-            // Wallet menu
             while (true) {
                 cout << "\n=== Grab Wallet Menu ===\n";
                 cout << "1. View Balance\n";
