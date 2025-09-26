@@ -14,10 +14,10 @@ void Wallet::addMoney(double amount) {
     if (amount > 0) {
         balance += amount;
         history.push_back("Added RM" + formatAmount(amount));
-        cout << "✅ Successfully added RM"
+        cout << "Successfully added RM"
              << fixed << setprecision(2) << amount << " to wallet.\n";
     } else {
-        cout << "❌ Invalid amount.\n";
+        cout << "Invalid amount.\n";
     }
 }
 
@@ -25,15 +25,15 @@ void Wallet::deductMoney(double amount, const string &purpose) {
     if (amount <= balance) {
         balance -= amount;
         history.push_back("Deducted RM" + formatAmount(amount) + " for " + purpose);
-        cout << "✅ Deducted RM"
+        cout << "Deducted RM"
              << fixed << setprecision(2) << amount << " for " << purpose << ".\n";
     } else {
-        cout << "❌ Insufficient balance!\n";
+        cout << "Insufficient balance!\n";
     }
 }
 
 void Wallet::viewHistory() {
-    cout << "\n📜 Transaction History:\n";
+    cout << "\nTransaction History:\n";
     for (const auto &h : history) {
         cout << "- " << h << endl;
     }

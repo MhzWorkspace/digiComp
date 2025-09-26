@@ -58,7 +58,7 @@ void grabRide(Wallet &myWallet) {
             // Deduct from wallet
             myWallet.deductMoney(price, "GrabRide - " + rideName);
         } else {
-            cout << "❌ Ride cancelled.\n";
+            cout << "Ride cancelled.\n";
         }
 
         cout << "\nWould you like to book another ride ? (y/n): ";

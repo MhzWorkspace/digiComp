@@ -11,11 +11,11 @@ int main() {
 
     while (true) {
         cout << "\n=====================================\n";
-        cout << "         🚖 Welcome to Grab 🚖        \n";
+        cout << "         Welcome to Grab         \n";
         cout << "=====================================\n";
-        cout << " 1. Grab Ride 🚗\n";
-        cout << " 2. Grab Food 🍔\n";
-        cout << " 3. Grab Wallet 💰\n";
+        cout << " 1. Grab Ride \n";
+        cout << " 2. Grab Food \n";
+        cout << " 3. Grab Wallet \n";
         cout << " 0. Exit\n";
         cout << "-------------------------------------\n";
         cout << "Enter your choice: ";
@@ -46,14 +46,14 @@ int main() {
                 } else if (walletChoice == 0) {
                     break;
                 } else {
-                    cout << "❌ Invalid choice!\n";
+                    cout << "Invalid choice!\n";
                 }
             }
         } else if (mainChoice == 0) {
-            cout << "👋 Exiting Grab App...\n";
+            cout << "Exiting Grab App...\n";
             break;
         } else {
-            cout << "❌ Invalid choice!\n";
+            cout << "Invalid choice!\n";
         }
     }
 

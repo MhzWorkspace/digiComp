@@ -104,7 +104,7 @@ void grabFood(Wallet &myWallet) {
             // Deduct from wallet
             myWallet.deductMoney(price, "GrabFood - " + orderName);
         } else {
-            cout << "❌ Order cancelled.\n";
+            cout << "Order cancelled.\n";
         }
 
         cout << "\nWould you like to order another item? (y/n): ";
