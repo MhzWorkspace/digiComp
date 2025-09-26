@@ -31,8 +31,18 @@ launch.json // Run configuration
 
 ---
 
-### Option 2: Compile & Run Manually (Mac/Linux Terminal)
-If you prefer running from terminal:  
+### Option 2: Compile & Run Manually
+
+If you prefer running from the terminal/command prompt:
+
+#### On Mac/Linux
 ```bash
 g++ main.cpp grabfood.cpp wallet.cpp -o grabapp
 ./grabapp
+```
+
+#### On Windows
+```bash
+g++ main.cpp grabfood.cpp wallet.cpp -o grabapp.exe
+grabapp.exe
+
