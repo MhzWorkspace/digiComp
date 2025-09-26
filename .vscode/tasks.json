@@ -1,23 +1,23 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Build Grab App",
-            "type": "shell",
-            "command": "g++",
-            "args": [
-                "main.cpp",
-                "grabfood.cpp",
-                "wallet.cpp",
-                "-o",
-                "grabapp"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": ["$gcc"],
-            "detail": "Compile the Grab App project"
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build grabapp",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "main.cpp",
+        "grabfood.cpp",
+        "grabride.cpp",
+        "wallet.cpp",
+        "-o",
+        "grabapp"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
 }

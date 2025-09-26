@@ -12,7 +12,7 @@
       "environment": [],
       "externalConsole": true,
       "MIMode": "lldb",
-      "preLaunchTask": "Build Grab App"
+      "preLaunchTask": "build grabapp"
     },
     {
       "name": "C/C++ Runner: Debug Session",
