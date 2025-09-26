@@ -1,5 +1,6 @@
 #include <iostream>
 #include "grabfood.h"
+#include "grabride.h"
 #include "wallet.h"
 using namespace std;
 
@@ -12,8 +13,8 @@ int main() {
         cout << "\n=====================================\n";
         cout << "         🚖 Welcome to Grab 🚖        \n";
         cout << "=====================================\n";
-        cout << " 1. Grab Ride 🚗  (coming soon)\n";
-        cout << " 2. Grab Food 🍔  (demo)\n";
+        cout << " 1. Grab Ride 🚗\n";
+        cout << " 2. Grab Food 🍔\n";
         cout << " 3. Grab Wallet 💰\n";
         cout << " 0. Exit\n";
         cout << "-------------------------------------\n";
@@ -21,7 +22,7 @@ int main() {
         cin >> mainChoice;
 
         if (mainChoice == 1) {
-            cout << "🚗 Grab Ride is under development.\n";
+            grabRide(myWallet);
         } else if (mainChoice == 2) {
             grabFood(myWallet);
         } else if (mainChoice == 3) {
