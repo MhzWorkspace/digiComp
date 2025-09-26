@@ -2,12 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Run Grab App",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/grabapp",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build Grab App"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/hazim/Documents/digiComp",
-      "program": "/Users/hazim/Documents/digiComp/build/Debug/outDebug"
+      "cwd": "/Users/hazim/Documents/degree/digiComp",
+      "program": "/Users/hazim/Documents/degree/digiComp/build/Debug/outDebug"
     }
   ]
 }
